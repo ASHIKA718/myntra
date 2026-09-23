@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fashion Hub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+     ========================================================= -->
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <img
+            src="https://1000logos.net/wp-content/uploads/2022/08/Myntra-Logo.png"
+            alt="Fashion Hub Logo"
+        >
+
+    </div>
+
+
+    <!-- =====================================================
+         NAV LINKS
+         ===================================================== -->
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#productSection"
+               onclick="showCategory('Men')">
+                MEN
+            </a>
+        </li>
+
+        <li>
+            <a href="#productSection"
+               onclick="showCategory('Women')">
+                WOMEN
+            </a>
+        </li>
+
+        <li>
+            <a href="#productSection"
+               onclick="showCategory('Kids')">
+                KIDS
+            </a>
+        </li>
+
+        <li>
+            <a href="#productSection"
+               onclick="showAllProducts()">
+                HOME
+            </a>
+        </li>
+
+        <li>
+            <a href="#productSection"
+               onclick="showAllProducts()">
+                BEAUTY
+            </a>
+        </li>
+
+        <li>
+            <a href="#productSection"
+               onclick="showAllProducts()">
+                GENZ
+            </a>
+        </li>
+
+        <li>
+            <a href="#productSection"
+               onclick="showAllProducts()">
+                STUDIO
+            </a>
+        </li>
+
+    </ul>
+
+
+    <!-- =====================================================
+         SEARCH
+         ===================================================== -->
+
+    <div class="search">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search for products, brands and more"
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- =====================================================
+         ACTIONS
+         ===================================================== -->
+
+    <div class="actions">
+
+
+        <!-- PROFILE -->
+
+        <div
+            class="action"
+            id="profileAction"
+            onclick="openProfile()"
+        >
+
+            <span class="icon">♙</span>
+
+            Profile
+
+        </div>
+
+
+        <!-- WISHLIST -->
+
+        <div
+            class="action"
+            id="wishlistAction"
+            onclick="openWishlist()"
+        >
+
+            <span class="icon">♡</span>
+
+            Wishlist
+
+        </div>
+
+
+        <!-- BAG -->
+
+        <div
+            class="action"
+            id="bagAction"
+            onclick="openBag()"
+        >
+
+            <span class="icon">🛍</span>
+
+            Bag
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     OFFER
+     ========================================================= -->
+
+<section class="offer">
+
+    <strong>
+        FLAT ₹300 OFF
+    </strong>
+
+    <p>
+        On Your 1st Purchase<br>
+        Via Our App!
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero">
+
+    <div
+        class="slides"
+        id="slides"
+    >
+
+
+        <!-- =================================================
+             SLIDE 1
+             ================================================= -->
+
+        <div class="slide">
+
+            <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85"
+                alt="Fashion"
+            >
+
+            <div class="slide-content">
+
+                <h1>
+                    BIG BRANDS<br>
+                    BIG SAVINGS
+                </h1>
+
+                <p>
+                    50–80% OFF • Best prices on trending styles
+                </p>
+
+                <button
+                    class="shop-btn"
+                    type="button"
+                    onclick="showAllProducts()"
+                >
+                    SHOP NOW →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SLIDE 2
+             ================================================= -->
+
+        <div class="slide">
+
+            <img
+                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=85"
+                alt="Women Fashion"
+            >
+
+            <div class="slide-content">
+
+                <h1>
+                    NEW SEASON<br>
+                    NEW YOU
+                </h1>
+
+                <p>
+                    Fresh looks made for every occasion
+                </p>
+
+                <button
+                    class="shop-btn"
+                    type="button"
+                    onclick="showAllProducts()"
+                >
+                    EXPLORE →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SLIDE 3
+             ================================================= -->
+
+        <div class="slide">
+
+            <img
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=85"
+                alt="Fashion Collection"
+            >
+
+            <div class="slide-content">
+
+                <h1>
+                    STYLE<br>
+                    YOUR WAY
+                </h1>
+
+                <p>
+                    Discover your next favourite outfit
+                </p>
+
+                <button
+                    class="shop-btn"
+                    type="button"
+                    onclick="showAllProducts()"
+                >
+                    SHOP NOW →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SLIDER BUTTONS
+         ===================================================== -->
+
+    <button
+        class="arrow prev"
+        type="button"
+        onclick="prevSlide()"
+        aria-label="Previous slide"
+    >
+        ‹
+    </button>
+
+
+    <button
+        class="arrow next"
+        type="button"
+        onclick="nextSlide()"
+        aria-label="Next slide"
+    >
+        ›
+    </button>
+
+
+    <!-- =====================================================
+         SLIDER DOTS
+         ===================================================== -->
+
+    <div
+        class="dots"
+        id="dots"
+    ></div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CATEGORY
+     ========================================================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        SHOP BY CATEGORY
+    </h2>
+
+
+    <div class="categories">
+
+
+        <!-- WOMEN -->
+
+        <div
+            class="category"
+            onclick="showCategory('Women', this)"
+        >
+
+            <div class="emoji">
+
+                <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=300&q=80"
+                    alt="Women"
+                >
+
+            </div>
+
+            <h3>
+                Women
+            </h3>
+
+        </div>
+
+
+
+        <!-- MEN -->
+
+        <div
+            class="category"
+            onclick="showCategory('Men', this)"
+        >
+
+            <div class="emoji">
+
+                <img
+                    src="https://assets.myntassets.com/assets/images/31472271/2025/2/21/7cbe9410-a9b3-460c-adeb-f17b4546eedc1740148775321-Campus-Sutra-Men-Comfort-Opaque-Checked-Casual-Shirt-8181740-1.jpg"
+                    alt="Men"
+                >
+
+            </div>
+
+            <h3>
+                Men
+            </h3>
+
+        </div>
+
+
+
+        <!-- FOOTWEAR -->
+
+        <div
+            class="category"
+            onclick="showCategory('Footwear', this)"
+        >
+
+            <div class="emoji">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80"
+                    alt="Footwear"
+                >
+
+            </div>
+
+            <h3>
+                Footwear
+            </h3>
+
+        </div>
+
+
+
+        <!-- JEWELLERY -->
+
+        <div
+            class="category"
+            onclick="showCategory('Jewellery', this)"
+        >
+
+            <div class="emoji">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=300&q=80"
+                    alt="Jewellery"
+                >
+
+            </div>
+
+            <h3>
+                Jewellery
+            </h3>
+
+        </div>
+
+
+
+        <!-- BAGS -->
+
+        <div
+            class="category"
+            onclick="showCategory('Bags', this)"
+        >
+
+            <div class="emoji">
+
+                <img
+                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=300&q=80"
+                    alt="Bags"
+                >
+
+            </div>
+
+            <h3>
+                Bags
+            </h3>
+
+        </div>
+
+
+
+        <!-- KIDS -->
+
+        <div
+            class="category"
+            onclick="showCategory('Kids', this)"
+        >
+
+            <div class="emoji">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=300&q=80"
+                    alt="Kids"
+                >
+
+            </div>
+
+            <h3>
+                Kids
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRODUCTS
+     ========================================================= -->
+
+<section
+    class="section"
+    id="productSection"
+>
+
+    <h2
+        class="section-title"
+        id="productTitle"
+    >
+        TRENDING NOW 🔥
+    </h2>
+
+
+    <!-- JavaScript creates products -->
+
+    <div
+        class="products"
+        id="products"
+    ></div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+
+    <div>
+
+        <h2>
+            FASHION HUB
+        </h2>
+
+        <p>
+            A modern fashion shopping frontend
+            connected with a Flask + MySQL backend.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            ONLINE SHOPPING
+        </h4>
+
+        <ul>
+
+            <li>Men</li>
+            <li>Women</li>
+            <li>Kids</li>
+            <li>Beauty</li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            USEFUL LINKS
+        </h4>
+
+        <ul>
+
+            <li>Contact Us</li>
+            <li>FAQ</li>
+            <li>Shipping</li>
+            <li>Returns</li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            EXPERIENCE THE APP
+        </h4>
+
+        <p>
+            Download the app and get exclusive offers.
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     TOAST
+     ========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+
+<!-- =========================================================
+     LOGIN POPUP
+     ========================================================= -->
+
+<div
+    class="login-overlay"
+    id="loginOverlay"
+    onclick="closeLoginOutside(event)"
+>
+
+
+    <div
+        class="login-box"
+        onclick="event.stopPropagation()"
+    >
+
+
+        <!-- LOGIN HEADER -->
+
+        <div class="login-header">
+
+            <button
+                class="close-login"
+                type="button"
+                onclick="closeLogin()"
+                aria-label="Close login"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                Welcome Back!
+            </h2>
+
+
+            <p>
+                Login to continue shopping
+            </p>
+
+        </div>
+
+
+
+        <!-- LOGIN FORM -->
+
+        <form
+            class="login-form"
+            onsubmit="loginUser(event)"
+        >
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton"
+            >
+                LOGIN
+            </button>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="login-divider">
+                OR
+            </div>
+
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <div class="create-account">
+
+                Don't have an account?
+
+                <a href="/signup">
+                    Create Account
+                </a>
+
+            </div>
+
+
+
+            <!-- TERMS -->
+
+            <div class="terms">
+
+                By continuing, you agree to our
+                Terms of Use and Privacy Policy.
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MAIN JAVASCRIPT
+     ========================================================= -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>

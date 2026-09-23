@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fashion Hub - Create Account</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='signup.css') }}"
+    >
+</head>
+
+<body class="signup-page">
+
+    <div class="signup-container">
+
+        <div class="signup-box">
+
+            <!-- LOGO -->
+            <div class="signup-logo">
+                FASHION <span>HUB</span>
+            </div>
+
+            <h1>Create Account</h1>
+
+            <p class="signup-subtitle">
+                Join Fashion Hub and start shopping
+            </p>
+
+            <!-- SIGNUP FORM -->
+            <form
+                class="signup-form"
+                id="signupForm"
+                onsubmit="signupUser(event)"
+            >
+
+                <!-- NAME -->
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        name="password"
+                        placeholder="Minimum 6 characters"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="form-group">
+                    <label for="signupConfirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupConfirmPassword"
+                        name="confirmPassword"
+                        placeholder="Re-enter your password"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <!-- BUTTON -->
+                <button
+                    type="submit"
+                    class="signup-button"
+                    id="signupButton"
+                >
+                    CREATE ACCOUNT
+                </button>
+
+            </form>
+
+            <!-- LOGIN -->
+            <div class="login-link">
+                Already have an account?
+                <a href="/">
+                    Login
+                </a>
+            </div>
+
+            <!-- BACK HOME -->
+            <a href="/" class="back-home">
+                ← Back to Fashion Hub
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script
+        src="{{ url_for('static', filename='signup.js') }}"
+    ></script>
+
+</body>
+</html>
