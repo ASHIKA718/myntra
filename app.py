@@ -270,7 +270,7 @@ def home():
     if os.path.exists(os.path.join(app.template_folder, "index.html")):
         return render_template("index.html")
 
-    return render_template("myntra.html")
+    return render_template("index.html")
 
 
 # =========================================================
