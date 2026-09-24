@@ -267,8 +267,8 @@ def find_product(product_id):
 @app.route("/")
 def home():
     # Supports either mytra.html or myntra.html.
-    if os.path.exists(os.path.join(app.template_folder, "mytra.html")):
-        return render_template("mytra.html")
+    if os.path.exists(os.path.join(app.template_folder, "index.html")):
+        return render_template("index.html")
 
     return render_template("myntra.html")
 
